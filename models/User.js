@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/database'); // เชื่อมต่อกับ Sequelize instance
-const WorkBookmarked = require('./workbookmarked');
+const WorkBookmarked = require('./WorkBookmarked');
 const JobApplicant = require('./JobApplicant');
 
 class User extends Model {
