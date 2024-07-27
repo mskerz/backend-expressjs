@@ -13,6 +13,10 @@ const employer_route = require('./routes/employers');
 const employer_role = require('./routes/role-employer')
 const basePath = '/api/v1';
 
+app.use((req, res, next) => {
+    console.log('Request URL:', req.url);
+    next(); // Continue to the next middleware or route handler
+});
 app.get(basePath,(req,res)=>{
     res.json({"message":"Hello, world!"});
 })
@@ -28,6 +32,6 @@ app.use(basePath,employer_role);
 
 app.listen(port, async () => {
     // await sequelize.sync();
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(`dev running on http://localhost:${port}`);
 });
 
