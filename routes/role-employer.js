@@ -21,5 +21,5 @@ router.delete('/job-post/:id', authentication, JobPostController.deleteJobPost);
 router.get('/job-all',JobPostController.JobAll);
 
 // Route view Job with ID
-router.get('job-detail/:id',JobPostController.JobwithId)
+router.get('/job-detail/:id',JobPostController.JobwithId)
 module.exports = router;
