@@ -33,7 +33,7 @@ class JobPostController {
     async updateJobPost(req, res) {
         const jobPostId = req.params.id;
         const { title, description, requirements, salary, worktype_id, workclassify_id } = req.body;
-        const {id} = req.user;
+        const { id } = req.user;
         console.log(`log employer id: ${req.user.id}`);
         try {
             const jobPost = await JobPost.findOne({
@@ -116,8 +116,25 @@ class JobPostController {
             if (!jobPost) {
                 return res.status(404).json({ message: 'Job post not found' });
             }
+            // สร้างโครงสร้างข้อมูลตามที่ต้องการ
+            const formattedJobPost = {
+                id: jobPost.id,
+                title: jobPost.title,
+                company_name: jobPost.employer.company_name,
+                description: jobPost.description,
+                requirements: jobPost.requirements,
+                salary: jobPost.salary,
+                status: jobPost.status,
+                worktype_name: jobPost.w_type.worktype_name,
+                work_classify_name: jobPost.w_classify.work_classify_name,
+                employer_id: jobPost.employer_id,
+                company_address: jobPost.employer.company_address,
+                createdAt: jobPost.createdAt,
+                updatedAt: jobPost.updatedAt
+            };
 
-            res.status(200).json(jobPost);
+            res.status(200).json(formattedJobPost);
+
         } catch (error) {
             console.error(error);
             res.status(500).json({ message: 'Internal Server Error' });
@@ -132,7 +149,7 @@ class JobPostController {
                     {
                         model: Employer,
                         as: 'employer',
-                        attributes: ['company_name','company_address']
+                        attributes: ['company_name', 'company_address']
                     },
                     {
                         model: WorkType,
@@ -152,7 +169,7 @@ class JobPostController {
             const JobAll = jobPosts.map(post => ({
                 id: post.id,
                 title: post.title,
-                company_name:post.employer.company_name,
+                company_name: post.employer.company_name,
                 description: post.description,
                 requirements: post.requirements,
                 salary: post.salary,
