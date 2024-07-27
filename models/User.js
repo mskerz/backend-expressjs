@@ -9,6 +9,8 @@ class User extends Model {
   async setPassword(password) {
     this.password = await bcrypt.hash(password, 10);
   }
+  
+  
 
   // Method สำหรับตรวจสอบรหัสผ่าน
   async comparePassword(password) {

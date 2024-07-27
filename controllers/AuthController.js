@@ -23,7 +23,7 @@ class AuthController {
             // Create new user
             const user = await User.create({ firstname, lastname, email, password, age });
             await user.setPassword(password); // Encrypt password before saving
-
+            await user.save(); // Save user with encrypted password
             // Respond without showing the password
             const userData = user.toJSON();
             delete userData.password;
