@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const WorkBookmarked = require('./workbookmarked');
+const WorkBookmarked = require('./WorkBookmarked');
 const Employer = require('./Employer');
 const sequelize = require('../config/database')
 class JobPosts extends Model {
