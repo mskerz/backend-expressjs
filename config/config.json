@@ -15,7 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
+    "username": "user",
     "password": "lWzSvDSqFZSVLOZRieiKFbqbBSlrILsI",
     "database": "railway",
     "host": "mysql.railway.internal",
