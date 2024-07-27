@@ -18,7 +18,12 @@ app.use((req, res, next) => {
     next(); // Continue to the next middleware or route handler
 });
 app.get(basePath,(req,res)=>{
-    res.json({"message":"Hello, world!"});
+    const api_datails = {
+        "message":"ExpressJS API",
+        "title":"Job Portal System",
+        "version":"v1.0"
+    }
+    res.json(api_datails);
 })
 app.use(basePath,auth_route);
 app.use(basePath,employer_route);
