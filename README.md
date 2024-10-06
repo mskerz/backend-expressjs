@@ -5,8 +5,7 @@ Welcome to the Job Portal REST API project! This API is built using Express.js a
 
 ## Features
 
-- Create, read, update, and delete job posts.
-- Authentication and authorization for job post management.
+
 - Refresh tokens 
 - Error handling and validation.
 
