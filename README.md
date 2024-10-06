@@ -5,7 +5,7 @@ Welcome to the Job Portal REST API project! This API is built using Express.js a
 
 ## Features
 
-
+- Authentication and authorization 
 - Refresh tokens 
 - Error handling and validation.
 
