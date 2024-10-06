@@ -1,7 +1,7 @@
 # Job Portal REST API
 
 Welcome to the Job Portal REST API project! This API is built using Express.js and follows the Model-Controller architecture pattern. It provides endpoints for managing job posts and user authentication.
-
+ (unfinish)
 
 ## Features
 
